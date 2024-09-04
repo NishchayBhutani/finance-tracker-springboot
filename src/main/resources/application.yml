@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: financetracker
+  datasource:
+    url: jdbc:postgresql://localhost:5432/finance_tracker
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 9090
