@@ -7,9 +7,9 @@ public interface UserService {
 
     public GetUserResponse create(CreateUserRequest createUserRequest);
 
-    public GetUserResponse get(int userId);
+    public GetUserResponse get(long userId);
 
-    public GetUserResponse update(CreateUserRequest updateUserRequest);
+    public GetUserResponse update(long userId, CreateUserRequest updateUserRequest);
 
-    public void delete(int userId);
+    public void delete(long userId);
 }

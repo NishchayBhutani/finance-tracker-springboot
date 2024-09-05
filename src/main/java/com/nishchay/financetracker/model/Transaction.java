@@ -8,7 +8,7 @@ import lombok.Data;
 public class Transaction {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private Double amount;
     private String name;
     private String description;

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class GetUserResponse {
-    private int id;
+    private long id;
     private String username;
     private String email;
     private LocalDateTime registrationDateTime;

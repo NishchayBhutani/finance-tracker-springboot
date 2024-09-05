@@ -10,7 +10,7 @@ import lombok.Data;
 public class Category {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private String name;
     private String description;
 }
