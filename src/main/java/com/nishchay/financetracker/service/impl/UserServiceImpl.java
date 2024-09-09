@@ -29,15 +29,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public GetUserResponse get(long userId) {
-        Optional<User> userOptional = userRepository.findById(userId);
-        User user = userOptional.orElseThrow(() -> new UserException(Constants.USER_NOT_FOUND));
-        return GetUserResponseBuilder.createGetUserResponse(userOptional.get());
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserException(Constants.USER_NOT_FOUND));
+        return GetUserResponseBuilder.createGetUserResponse(user);
     }
 
     @Override
     public GetUserResponse update(long userId, CreateUserRequest updateUserRequest) throws UserException{
-        Optional<User> userOptional = userRepository.findById(userId);
-        User user = userOptional.orElseThrow(() -> new UserException(Constants.USER_NOT_FOUND));
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserException(Constants.USER_NOT_FOUND));
         UserBuilder.updateUser(user, updateUserRequest);
         userRepository.save(user);
         return GetUserResponseBuilder.createGetUserResponse(user);
@@ -46,5 +44,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(long userId) {
         userRepository.deleteById(userId);
+    }
+
+    @Override
+    public User getUserForTransaction(long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserException(Constants.USER_NOT_FOUND));
+        return user;
     }
 }
