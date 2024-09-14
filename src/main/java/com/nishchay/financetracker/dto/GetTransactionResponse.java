@@ -13,5 +13,5 @@ public class GetTransactionResponse {
     private String description;
     private String paymentMethod;
     private GetUserResponse user;
-    private Category category;
+    private GetCategoryResponse category;
 }

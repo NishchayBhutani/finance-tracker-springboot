@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CategoryRestController {
 
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
 
     @PostMapping
     public ResponseEntity<GetCategoryResponse> createCategory(@RequestBody CreateCategoryRequest createCategoryRequest) {
@@ -32,6 +32,7 @@ public class CategoryRestController {
 
     @DeleteMapping("/{categoryId}")
     public ResponseEntity<Void> deleteCategory(@PathVariable long categoryId) {
+        categoryService.delete(categoryId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
