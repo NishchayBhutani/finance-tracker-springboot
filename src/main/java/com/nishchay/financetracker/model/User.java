@@ -1,9 +1,6 @@
 package com.nishchay.financetracker.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,7 +12,9 @@ public class User {
     @Id
     @GeneratedValue
     private long id;
+    @Column(unique = true)
     private String username;
+    @Column(unique = true)
     private String email;
     private String password;
     private LocalDateTime registrationDateTime;

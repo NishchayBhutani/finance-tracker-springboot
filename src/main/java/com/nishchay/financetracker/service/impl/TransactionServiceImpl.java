@@ -2,10 +2,8 @@ package com.nishchay.financetracker.service.impl;
 
 import com.nishchay.financetracker.builder.GetTransactionResponseBuilder;
 import com.nishchay.financetracker.builder.TransactionBuilder;
-import com.nishchay.financetracker.builder.UserBuilder;
 import com.nishchay.financetracker.dto.CreateTransactionRequest;
 import com.nishchay.financetracker.dto.GetTransactionResponse;
-import com.nishchay.financetracker.dto.GetUserResponse;
 import com.nishchay.financetracker.exception.TransactionException;
 import com.nishchay.financetracker.model.Category;
 import com.nishchay.financetracker.model.Transaction;
